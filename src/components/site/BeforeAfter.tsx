@@ -90,7 +90,7 @@ export function BeforeAfter() {
                 alt="Placeholder before image of a dated kitchen with oak cabinets and laminate counters"
                 loading="lazy"
                 className="h-full w-full object-cover"
-                style={{ width: containerRef.current ? containerRef.current.offsetWidth : "100%", maxWidth: "none" }}
+                style={{ width: width || "100%", maxWidth: "none" }}
               />
             </div>
 
