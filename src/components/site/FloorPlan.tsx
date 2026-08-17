@@ -78,6 +78,8 @@ export function FloorPlan() {
 
           {rooms.map((r) => {
             const isActive = active === r.id;
+            const points = poly(r.rect);
+            const [lx, ly] = center(r.rect);
             return (
               <g
                 key={r.id}
@@ -88,27 +90,40 @@ export function FloorPlan() {
                 tabIndex={0}
                 className="cursor-pointer outline-none"
                 style={{
-                  transform: isActive ? "translateY(-10px)" : "translateY(0)",
+                  transform: isActive ? "translateY(-12px)" : "translateY(0)",
                   transition: "transform 0.6s cubic-bezier(0.22,1,0.36,1)",
                 }}
               >
                 <polygon
-                  points={r.points}
+                  points={points}
+                  fill="oklch(0.19 0.006 60)"
+                  opacity={isActive ? 0.2 : 0.09}
+                  transform="translate(0, 16)"
+                  style={{ transition: "opacity 0.5s ease" }}
+                />
+                <polygon
+                  points={points}
                   fill={isActive ? "url(#fpActive)" : "url(#fpFill)"}
                   stroke="oklch(0.19 0.006 60 / 0.35)"
                   strokeWidth="1"
                   style={{ transition: "fill 0.5s ease" }}
                 />
-                <polygon
-                  points={r.points}
+                <text
+                  x={lx}
+                  y={ly}
+                  textAnchor="middle"
+                  fontSize="10"
+                  letterSpacing="2"
                   fill="oklch(0.19 0.006 60)"
-                  opacity={isActive ? 0.18 : 0.08}
-                  transform="translate(0, 14)"
-                  style={{ transition: "opacity 0.5s ease" }}
-                />
+                  opacity={isActive ? 0.85 : 0.35}
+                  style={{ transition: "opacity 0.5s ease", textTransform: "uppercase" }}
+                >
+                  {r.label.toUpperCase()}
+                </text>
               </g>
             );
           })}
+
         </svg>
       </div>
 
