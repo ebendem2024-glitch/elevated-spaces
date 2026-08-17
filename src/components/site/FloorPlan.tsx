@@ -64,7 +64,7 @@ export function FloorPlan() {
           transform: `perspective(1400px) rotateX(${10 - tilt * 8}deg) rotateZ(${-2 + tilt * 3}deg) translateY(${tilt * -14}px)`,
         }}
       >
-        <svg viewBox="-20 20 560 380" className="h-auto w-full" role="img" aria-label="Stylized floor plan of a remodeled home">
+        <svg viewBox="10 40 620 400" className="h-auto w-full" role="img" aria-label="Stylized floor plan of a remodeled home">
           <defs>
             <linearGradient id="fpFill" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="oklch(0.99 0.005 85)" />
