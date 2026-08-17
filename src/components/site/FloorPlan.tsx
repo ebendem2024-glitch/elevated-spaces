@@ -3,16 +3,40 @@ import { useEffect, useRef, useState } from "react";
 type Room = {
   id: string;
   label: string;
-  points: string;
+  rect: [number, number, number, number];
 };
 
+const S = 46;
+const CX = 250;
+const CY = 70;
+
+function iso(px: number, py: number) {
+  return [(px - py) * 0.866 * S + CX, (px + py) * 0.5 * S + CY] as const;
+}
+
+function poly([x, y, w, h]: [number, number, number, number]) {
+  return [
+    iso(x, y),
+    iso(x + w, y),
+    iso(x + w, y + h),
+    iso(x, y + h),
+  ]
+    .map(([a, b]) => `${a.toFixed(1)},${b.toFixed(1)}`)
+    .join(" ");
+}
+
+function center([x, y, w, h]: [number, number, number, number]) {
+  return iso(x + w / 2, y + h / 2);
+}
+
 const rooms: Room[] = [
-  { id: "kitchen", label: "Kitchen", points: "40,120 200,40 320,100 160,180" },
-  { id: "living", label: "Living Area", points: "170,190 330,110 460,172 300,252" },
-  { id: "bathroom", label: "Bathroom", points: "20,180 140,240 60,280 -0,250" },
-  { id: "bedroom", label: "Bedroom", points: "150,255 300,330 200,380 60,310" },
-  { id: "exterior", label: "Exterior", points: "310,262 470,182 520,206 360,286" },
+  { id: "kitchen", label: "Kitchen", rect: [0, 0, 4, 3] },
+  { id: "living", label: "Living Area", rect: [4, 0, 5, 3] },
+  { id: "bathroom", label: "Bathroom", rect: [0, 3, 2, 2.5] },
+  { id: "bedroom", label: "Bedroom", rect: [2, 3, 4, 2.5] },
+  { id: "exterior", label: "Exterior", rect: [6, 3, 3, 2.5] },
 ];
+
 
 export function FloorPlan() {
   const wrapRef = useRef<HTMLDivElement | null>(null);
