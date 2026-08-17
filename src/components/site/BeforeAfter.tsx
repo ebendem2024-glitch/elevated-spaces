@@ -6,7 +6,19 @@ import { Reveal } from "./Reveal";
 export function BeforeAfter() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [pos, setPos] = useState(50);
+  const [width, setWidth] = useState(0);
   const dragging = useRef(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const update = () => setWidth(el.offsetWidth);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
 
   const setFromClientX = useCallback((clientX: number) => {
     const el = containerRef.current;
