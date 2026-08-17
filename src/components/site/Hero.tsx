@@ -25,7 +25,9 @@ export function Hero() {
         className="absolute inset-0 h-[115%] w-full object-cover"
         style={{ transform: `translate3d(0, ${offset * 0.25}px, 0) scale(${mounted ? 1 : 1.08})`, transition: "transform 2.4s cubic-bezier(0.22,1,0.36,1)" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink/85" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/45 to-ink/95" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/75 via-ink/20 to-transparent" />
+
 
       <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-end px-6 pb-24 md:px-10 md:pb-28">
         <p
