@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import kitchen from "@/assets/kitchen.jpg";
 import bathroom from "@/assets/bathroom.jpg";
-import living from "@/assets/living.jpg";
+
 import wholehome from "@/assets/wholehome.jpg";
 import exterior from "@/assets/exterior.jpg";
-import craft from "@/assets/craft.jpg";
+
 import openLiving from "@/assets/open-living.png.asset.json";
 import kitchenIsland from "@/assets/kitchen-island.png.asset.json";
 import { Reveal } from "./Reveal";
@@ -46,9 +46,9 @@ const projects: Project[] = [
     category: "Interiors",
     description:
       "Placeholder project imagery — interior renovation with wood paneling, a stone fireplace, and tall windows.",
-    image: living,
+    image: openLiving.url,
     span: "",
-    alt: "Placeholder image of a wood-paneled living room with a stone fireplace",
+    alt: "Open plan living room with a gray sectional, marble coffee table, and hardwood floors",
   },
   {
     id: "p4",
@@ -75,9 +75,9 @@ const projects: Project[] = [
     title: "Joinery Detail",
     category: "Interiors",
     description: "Placeholder project imagery — custom millwork detail with precise joinery and brass inlay.",
-    image: craft,
+    image: kitchenIsland.url,
     span: "",
-    alt: "Placeholder image of custom cabinetry joinery detail",
+    alt: "Kitchen island cabinetry detail with shiplap paneling and quartz countertop",
   },
 ];
 
