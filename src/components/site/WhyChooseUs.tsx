@@ -1,4 +1,4 @@
-import craftImage from "@/assets/craft.jpg";
+import craftImage from "@/assets/why-craft.png.asset.json";
 import openLiving from "@/assets/open-living.png.asset.json";
 import { Reveal, RevealImage } from "./Reveal";
 
@@ -24,8 +24,8 @@ export function WhyChooseUs() {
               </h2>
             </Reveal>
             <RevealImage
-              src={craftImage}
-              alt="Close-up of precise white oak cabinetry joinery with a brass detail"
+              src={craftImage.url}
+              alt="Custom home remodeling detail showing refined craftsmanship and material quality"
               width={1200}
               height={900}
               className="mt-10 aspect-[4/3] w-full"
