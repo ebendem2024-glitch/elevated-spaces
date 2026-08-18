@@ -61,6 +61,17 @@ export function Intro() {
           </Reveal>
         </div>
       </div>
+
+      <div className="mx-auto mt-24 max-w-[1400px] px-6 md:mt-32 md:px-10">
+        <RevealImage
+          src={kitchenIsland.url}
+          alt="Open concept kitchen remodel with a navy island, quartz waterfall counter, and warm hardwood floors"
+          width={2000}
+          height={1200}
+          className="aspect-[16/9] w-full"
+          imgClassName="hover:scale-[1.03]"
+        />
+      </div>
     </section>
   );
 }
