@@ -4,7 +4,7 @@ import { Reveal, RevealImage } from "./Reveal";
 
 export function Intro() {
   return (
-    <section id="about" className="bg-background py-24 md:py-36">
+    <section id="about" className="bg-background py-24 md:pt-36 pb-6 md:pb-8">
       <div className="mx-auto grid max-w-[1400px] items-center gap-14 px-6 md:px-10 lg:grid-cols-[1fr_1.05fr] lg:gap-24">
         <div>
           <Reveal>
@@ -63,7 +63,7 @@ export function Intro() {
         </div>
       </div>
 
-      <div className="mx-auto mt-24 max-w-[1400px] px-6 md:mt-32 md:px-10">
+      <div className="mx-auto mt-10 max-w-[1400px] px-6 md:mt-14 md:px-10">
         <RevealImage
           src={kitchenIsland.url}
           alt="Open concept kitchen remodel with a navy island, quartz waterfall counter, and warm hardwood floors"

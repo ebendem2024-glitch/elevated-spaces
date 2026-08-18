@@ -45,22 +45,20 @@ export function RevealImage({
 }) {
   const { ref, visible } = useReveal<HTMLDivElement>(0.12);
   return (
-    <div
-      ref={ref}
-      data-visible={visible}
-      className={cn("image-mask overflow-hidden", className)}
-    >
-      <img
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        loading={priority ? "eager" : "lazy"}
-        className={cn(
-          "h-full w-full object-cover transition-transform duration-[1600ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
-          imgClassName,
-        )}
-      />
+    <div ref={ref} className={cn("overflow-hidden", className)}>
+      <div data-visible={visible} className="image-mask h-full w-full">
+        <img
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          loading={priority ? "eager" : "lazy"}
+          className={cn(
+            "h-full w-full object-cover transition-transform duration-[1600ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
+            imgClassName,
+          )}
+        />
+      </div>
     </div>
   );
 }

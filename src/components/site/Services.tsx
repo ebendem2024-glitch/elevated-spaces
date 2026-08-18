@@ -34,7 +34,7 @@ export function Services() {
   const [hover, setHover] = useState<string | null>(null);
 
   return (
-    <section id="services" className="bg-secondary/50 py-24 md:py-36">
+    <section id="services" className="bg-secondary/50 py-10 md:py-14">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
