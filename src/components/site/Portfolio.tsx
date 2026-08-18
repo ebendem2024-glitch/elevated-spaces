@@ -5,6 +5,8 @@ import living from "@/assets/living.jpg";
 import wholehome from "@/assets/wholehome.jpg";
 import exterior from "@/assets/exterior.jpg";
 import craft from "@/assets/craft.jpg";
+import openLiving from "@/assets/open-living.png.asset.json";
+import kitchenIsland from "@/assets/kitchen-island.png.asset.json";
 import { Reveal } from "./Reveal";
 
 type Project = {

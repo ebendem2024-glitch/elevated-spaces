@@ -1,4 +1,5 @@
 import craftImage from "@/assets/craft.jpg";
+import openLiving from "@/assets/open-living.png.asset.json";
 import { Reveal, RevealImage } from "./Reveal";
 
 const features = [
@@ -32,7 +33,16 @@ export function WhyChooseUs() {
             />
           </div>
 
-          <div className="grid gap-px self-center bg-ink-foreground/12 sm:grid-cols-2">
+          <div className="self-center">
+          <RevealImage
+            src={openLiving.url}
+            alt="Open plan living room and kitchen renovation with a gray sectional, marble table, and hardwood floors"
+            width={1280}
+            height={853}
+            className="mb-10 aspect-[3/2] w-full"
+            imgClassName="hover:scale-[1.04]"
+          />
+          <div className="grid gap-px bg-ink-foreground/12 sm:grid-cols-2">
             {features.map((f, i) => (
               <Reveal key={f.title} delay={i * 90}>
                 <div className="group h-full bg-ink p-8 transition-colors duration-500 hover:bg-ink-foreground/[0.04] md:p-10">
@@ -45,6 +55,7 @@ export function WhyChooseUs() {
                 </div>
               </Reveal>
             ))}
+          </div>
           </div>
         </div>
       </div>

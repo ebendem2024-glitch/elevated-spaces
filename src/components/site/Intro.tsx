@@ -1,4 +1,5 @@
 import introImage from "@/assets/intro.jpg";
+import kitchenIsland from "@/assets/kitchen-island.png.asset.json";
 import { Reveal, RevealImage } from "./Reveal";
 
 export function Intro() {
