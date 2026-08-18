@@ -4,7 +4,7 @@ import { Reveal, RevealImage } from "./Reveal";
 
 export function Intro() {
   return (
-    <section id="about" className="bg-background py-24 md:pt-36 pb-10 md:pb-14">
+    <section id="about" className="bg-background py-24 md:pt-36 pb-6 md:pb-8">
       <div className="mx-auto grid max-w-[1400px] items-center gap-14 px-6 md:px-10 lg:grid-cols-[1fr_1.05fr] lg:gap-24">
         <div>
           <Reveal>
